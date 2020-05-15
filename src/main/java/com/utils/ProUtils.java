@@ -12,20 +12,51 @@ import java.util.Properties;
  */
 public class ProUtils {
 
-    public static void main(String[] args){
+    private Properties pro;
+
+    public ProUtils(String filepath){
+        pro = readProperties(filepath);
+    }
+
+    /**
+     * 读取properties
+     * @return pro
+     */
+    private Properties readProperties(String filepath){
         Properties p = new Properties();
         try {
-            FileInputStream f = new FileInputStream("element.properties");
+            FileInputStream f = new FileInputStream(filepath);
             BufferedInputStream bf = new BufferedInputStream(f);
             p.load(bf);
-            String username = p.getProperty("username");
-            System.out.print(username);
         } catch (FileNotFoundException e){
-            System.out.println("找不到文件");
             e.printStackTrace();
         } catch (IOException e){
-            System.out.println("properties 读取失败");
             e.printStackTrace();
         }
+        return p;
+    }
+
+    /**
+     * get value by key
+     * @param key
+     * @return
+     */
+    public String getPro(String key){
+        String result = "";
+        if (pro.containsKey(key)) {
+            result = pro.getProperty(key);
+        }
+        return result;
+    }
+
+    public int getLines(){
+        return pro.size();
+    }
+
+    public static void main(String[] args){
+        ProUtils po = new ProUtils("element.properties");
+        String result = po.getPro("username");
+        System.out.println(result);
+        System.out.println(po.getLines());
     }
 }
