@@ -1,5 +1,6 @@
 import com.utils.ProUtils;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,9 +18,11 @@ import org.testng.annotations.*;
 @Listeners({TestNgListenerScreen.class})
 public class LoginTest {
     private static Logger log = Logger.getLogger(LoginTest.class);
+
     public WebDriver driver;
     @BeforeClass
     public void beforeClass(){
+        PropertyConfigurator.configure("log4j.properties");
         driver = new ChromeDriver();
         driver.get("https://www.imooc.com/");
         driver.manage().window().maximize();
