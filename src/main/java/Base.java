@@ -5,6 +5,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 基类
@@ -25,6 +27,15 @@ public class Base {
     public List<WebElement> getElements(By key){
         List<WebElement> ele = new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfAllElementsLocatedBy(key));
         return ele;
+    }
+
+    public boolean isNum(String param){
+        Pattern p = Pattern.compile("[0-9]*");
+        Matcher ma = p.matcher(param);
+        if (ma.matches()){
+            return true;
+        }
+        return false;
     }
 
 }
