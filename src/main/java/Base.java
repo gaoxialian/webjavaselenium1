@@ -1,4 +1,8 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * 基类
@@ -6,5 +10,14 @@ import org.openqa.selenium.WebElement;
  */
 public class Base {
 
+    WebDriver driver;
+    public Base(WebDriver driver){
+        this.driver = driver;
+    }
+
+    public WebElement getElement(By key){
+        WebElement ele = new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(key));
+        return ele;
+    }
 
 }

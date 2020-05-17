@@ -18,7 +18,7 @@ import org.testng.annotations.*;
 @Listeners({TestNgListenerScreen.class})
 public class LoginTest {
     private static Logger log = Logger.getLogger(LoginTest.class);
-
+    private LoginHandle handle;
     public WebDriver driver;
     @BeforeClass
     public void beforeClass(){
@@ -26,10 +26,12 @@ public class LoginTest {
         driver = new ChromeDriver();
         driver.get("https://www.imooc.com/");
         driver.manage().window().maximize();
+        handle = new LoginHandle(driver);
     }
 
     @BeforeTest
     public void beforeTest(){
+//        driver.navigate().refresh();
     }
 
     @Test
@@ -39,10 +41,10 @@ public class LoginTest {
         String result = pro.getPro("username");
         String user = result.split(">")[0];
         String pwd = result.split(">")[1];
-        getElement(LoginPage.loginBtn).click();
-        getElement(LoginPage.email).sendKeys(user);
-        getElement(LoginPage.pwd).sendKeys(pwd);
-        getElement(LoginPage.button).click();
+        handle.clickHomeLoginBtn();
+        handle.sendEmail(user);
+        handle.sendPwd(pwd);
+        handle.clickLoginBtn();
         Thread.sleep(3000);
     }
 
