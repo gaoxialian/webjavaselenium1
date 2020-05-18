@@ -1,22 +1,21 @@
-import com.utils.ProUtils;
+package com.cases;
+
+import com.handle.HomeHandle;
+import com.handle.LoginHandle;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.util.List;
 
 /**
+ *
  * Created by Administrator on 2020/5/17.
  */
 public class HomeCase {
-    private static Logger log = Logger.getLogger(LoginTest.class);
+    private static Logger log = Logger.getLogger(HomeCase.class);
     private LoginHandle handle;
     private HomeHandle handleHome;
     public WebDriver driver;
