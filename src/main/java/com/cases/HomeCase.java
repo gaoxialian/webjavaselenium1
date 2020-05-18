@@ -1,5 +1,6 @@
 package com.cases;
 
+import com.base.TestCaseBase;
 import com.handle.HomeHandle;
 import com.handle.LoginHandle;
 import org.apache.log4j.Logger;
@@ -14,17 +15,18 @@ import java.util.List;
  *
  * Created by Administrator on 2020/5/17.
  */
-public class HomeCase {
+public class HomeCase extends TestCaseBase {
     private static Logger log = Logger.getLogger(HomeCase.class);
     private LoginHandle handle;
     private HomeHandle handleHome;
     public WebDriver driver;
 
+    @Parameters({"brower"})
     @BeforeClass
-    public void beforeClass(){
+    public void beforeClass(@Optional("chrome") String brower){
         PropertyConfigurator.configure("log4j.properties");
         log.info("----beforeClass----");
-        driver = new ChromeDriver();
+        driver = getDriver(brower);
         driver.get("https://www.imooc.com/course/list");
         driver.manage().window().maximize();
 //        handle = new LoginHandle(driver);

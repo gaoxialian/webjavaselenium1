@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite-home" verbose="2"  configfailurepolicy="continue"
+    time-out="300000" skipfailedinvocationcounts="true" preserve-order="true" > 
+
+	<test name="home" enabled="true" >
+		<parameter name="brower" value="chrome"></parameter>
+		<classes>
+			<class name="com.cases.HomeCase">
+				<methods>
+					<include name="testcase1"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+</suite> 

@@ -33,6 +33,11 @@ public class LoginHandle {
         loginPage.getLoginBtn().click();
     }
 
+    public String getUserText(){
+        loginPage.moveToElement(loginPage.getLoginUserPng());
+        String username = loginPage.getUserInfo().getText();
+        return username;
+    }
 
 
 }

@@ -7,15 +7,9 @@
 		<listener class-name="org.uncommons.reportng.HTMLReporter"/>
          <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 	</listeners>
-	<test name="测试" enabled="true" >
-		<parameter name="brower" value="chrome"></parameter>
-		<classes>
-			<class name="com.cases.LoginCase">
-				<methods>
-					<include name="testcase1"></include>
-				</methods>
-			</class>
-		</classes>
-	</test>
+	<suite-files>
+		<suite-file path="home_testng.xml"></suite-file>
+		<suite-file path="login_testng.xml"></suite-file>
+	</suite-files>
 	
 </suite> 
