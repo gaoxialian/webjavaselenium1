@@ -23,7 +23,7 @@ public class HomeCase extends TestCaseBase {
 
     @Parameters({"brower"})
     @BeforeClass
-    public void beforeClass(@Optional("chrome") String brower){
+    public void beforeClass(@Optional("chrome") String brower) {
         PropertyConfigurator.configure("log4j.properties");
         log.info("----beforeClass----");
         driver = getDriver(brower);
@@ -34,28 +34,29 @@ public class HomeCase extends TestCaseBase {
     }
 
     @BeforeMethod
-    public void beforeTest(){
+    public void beforeTest() {
         log.info("----beforeTest----");
         driver.navigate().refresh();
     }
 
     @Test
-    public void testcase1() throws InterruptedException{
+    public void testcase1() throws InterruptedException {
         log.info("--------------testcase1--------------");
         List<String> names = handleHome.getCourseNames();
-        for(String name:names){
+        for (String name : names) {
             log.info(name);
         }
         Thread.sleep(3000);
     }
 
     @AfterMethod
-    public void afterMethod(){
+    public void afterMethod() {
         log.info("----afterMethod----");
         driver.manage().deleteAllCookies();
     }
+
     @AfterClass
-    public void closeDriver(){
+    public void closeDriver() {
         driver.quit();
     }
 }
