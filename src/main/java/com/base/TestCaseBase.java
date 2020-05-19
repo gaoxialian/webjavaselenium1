@@ -5,6 +5,7 @@ import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 /**
  * base基类
@@ -19,9 +20,11 @@ public class TestCaseBase{
         PropertyConfigurator.configure("log4j.properties");
         log.info("--------打开浏览器-------");
         if("chrome".equals(brower)){
+            System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
             driver = new ChromeDriver();
-        } else {
-            driver = new FirefoxDriver();
+        } if("ie".equals(brower)){
+            System.setProperty("webdriver.ie.driver","drivers/IEDriverServer64.exe");
+            driver = new InternetExplorerDriver();
         }
         driver.manage().window().maximize();
         return driver;
