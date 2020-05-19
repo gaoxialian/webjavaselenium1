@@ -22,7 +22,7 @@ public class LoginCase extends TestCaseBase {
 
     @Parameters({"brower"})
     @BeforeClass
-    public void beforeClass(String brower){
+    public void beforeClass(@Optional("ie") String brower){
         driver = getDriver(brower);
         driver.get("https://www.imooc.com/");
         handle = new LoginHandle(driver);
@@ -40,10 +40,8 @@ public class LoginCase extends TestCaseBase {
         String result = pro.getPro("username");
         String user = result.split(">")[0];
         String pwd = result.split(">")[1];
-        handle.clickHomeLoginBtn();
-        handle.sendEmail(user);
-        handle.sendPwd(pwd);
-        handle.clickLoginBtn();
+        handle.login("15050193776","gao13773081116");
+        Assert.assertEquals("慕姐7020064", handle.getUserText());
         Thread.sleep(3000);
     }
 
