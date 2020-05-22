@@ -42,4 +42,7 @@ public class CourseHandle {
         return courseNum;
     }
 
+    public void addCookie(){
+        coursePage.setcookie();
+    }
 }

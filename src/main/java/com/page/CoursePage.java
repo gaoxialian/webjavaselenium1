@@ -31,6 +31,7 @@ public class CoursePage extends Base {
         return ele;
     }
 
-
-
+    public void setcookie(){
+        setCookie();
+    }
 }

@@ -24,12 +24,15 @@ public class CourseCase extends TestCaseBase {
 
     @Parameters({"brower"})
     @BeforeClass
-    public void beforeClass(@Optional("chrome") String brower){
+    public void beforeClass(@Optional("chrome") String brower) throws InterruptedException {
         driver = getDriver(brower);
         driver.get("https://coding.imooc.com/class/436.html");
         loginHandle = new LoginHandle(driver);
         handle = new CourseHandle(driver);
-        loginHandle.login("15050193776","gao13773081116");
+        handle.addCookie();
+        Thread.sleep(2000);
+        driver.navigate().refresh();
+//        loginHandle.login("15050193776","gao13773081116");
     }
 
     @BeforeMethod
@@ -60,6 +63,15 @@ public class CourseCase extends TestCaseBase {
         log.info(currentTitle);
         boolean flag = currentTitle.contains(title);
         Assert.assertTrue(flag);
+    }
+
+    @Test
+    public void testcase3() throws InterruptedException {
+        log.info("---------add cookie------------------");
+        Thread.sleep(1000);
+        handle.addCookie();
+        driver.navigate().refresh();
+        Thread.sleep(3000);
     }
 
     @AfterClass
