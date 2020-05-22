@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -24,8 +23,8 @@ public class HomeCase {
 
     @BeforeClass
     public void beforeClass(){
-        log.info("----beforeClass----");
         PropertyConfigurator.configure("log4j.properties");
+        log.info("----beforeClass----");
         driver = new ChromeDriver();
         driver.get("https://www.imooc.com/course/list");
         driver.manage().window().maximize();
@@ -42,21 +41,9 @@ public class HomeCase {
     @Test
     public void testcase1() throws InterruptedException{
         log.info("--------------testcase1--------------");
-        List<String> names = handleHome.getCourseNamesValue();
-        // 页面上的课程
+        List<String> names = handleHome.getCourseNames();
         for(String name:names){
             log.info(name);
-        }
-        Thread.sleep(3000);
-    }
-
-    @Test
-    public void testcase2() throws InterruptedException{
-        log.info("--------------testcase2--------------");
-        List<Integer> pageIndexList = handleHome.getPageList();
-        // 页面上的课程
-        for(Integer page:pageIndexList){
-            log.info(page);
         }
         Thread.sleep(3000);
     }
