@@ -7,10 +7,9 @@
 		<listener class-name="org.uncommons.reportng.HTMLReporter"/>
          <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 	</listeners>
-	<test name="测试" enabled="true" > 
-		<classes>
-			<class name="LoginTest"/>
-		</classes>
-	</test>
+	<suite-files>
+		<suite-file path="home_testng.xml"></suite-file>
+		<suite-file path="login_testng.xml"></suite-file>
+	</suite-files>
 	
 </suite> 

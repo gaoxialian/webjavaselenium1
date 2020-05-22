@@ -1,3 +1,6 @@
+package com.listeners;
+
+import com.cases.LoginCase;
 import com.google.common.io.Files;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
@@ -17,13 +20,13 @@ import java.util.Date;
  */
 public class TestNgListenerScreen extends TestListenerAdapter {
 
-    private static Logger log = org.apache.log4j.Logger.getLogger(LoginTest.class);
+    private static Logger log = org.apache.log4j.Logger.getLogger(TestNgListenerScreen.class);
 
     @Override
     public void onTestFailure(ITestResult tr){
         log.info("-------onTestFailure-----");
 //        System.out.print(tr.getInstance());
-        LoginTest lt = (LoginTest)tr.getInstance();
+        LoginCase lt = (LoginCase)tr.getInstance();
         this.takeScreenShot(lt.driver);
         super.onTestFailure(tr);
     }
