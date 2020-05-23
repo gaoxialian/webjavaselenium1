@@ -10,6 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 import javax.swing.*;
 
 /**
+ * loginpage
  * page
  * Created by gaoxl on 2020/5/15.
  */
