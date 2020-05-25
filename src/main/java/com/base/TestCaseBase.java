@@ -27,9 +27,13 @@ public class TestCaseBase{
             options.addArguments("–window-size=1024,1024");
             options.addArguments("–headless");
             driver = new ChromeDriver(options);
-        } if("ie".equals(brower)){
+        } else if("ie".equals(brower)){
             System.setProperty("webdriver.ie.driver","drivers/IEDriverServer64.exe");
             driver = new InternetExplorerDriver();
+        } else if ("firefox".equals(brower)){
+            System.setProperty("webdriver.firefox.bin","D:\\Program Files\\Mozilla Firefox46\\firefox.exe");
+            System.setProperty("webdriver.gecko.driver","drivers/geckodriver.exe");
+            driver = new FirefoxDriver();
         }
         driver.manage().window().maximize();
         return driver;
