@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
- *
+ * coursehandle
  * Created by Administrator on 2020/5/17.
  */
 public class CourseHandle {
