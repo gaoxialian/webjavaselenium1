@@ -22,7 +22,7 @@ public class HomeHandle extends BaseHandle {
     public List<String> getCourseNames(){
         List<String> courseNames = new ArrayList<String>();
         List<WebElement> eles =  homePage.getCourseName();
-        for(int i =0;i < eles.size(); i++){
+        for(int i = 0;i < eles.size(); i++){
             courseNames.add(eles.get(i).getText());
         }
         return courseNames;
