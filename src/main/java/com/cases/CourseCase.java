@@ -24,19 +24,18 @@ public class CourseCase extends TestCaseBase {
 
     @Parameters({"brower"})
     @BeforeClass
-    public void beforeClass(@Optional("chrome") String brower) throws InterruptedException {
+    public void beforeClass(@Optional("firefox") String brower) throws InterruptedException {
         driver = getDriver(brower);
         driver.get("https://coding.imooc.com/class/436.html");
+        Thread.sleep(3000);
         loginHandle = new LoginHandle(driver);
         handle = new CourseHandle(driver);
-        handle.addCookie();
-        Thread.sleep(2000);
-        driver.navigate().refresh();
-//        loginHandle.login("15050193776","gao13773081116");
+        loginHandle.login("15050193776","gao13773081116");
     }
 
     @BeforeMethod
     public void beforeMethod(){
+//        driver.manage().deleteAllCookies();
 //        driver.navigate().refresh();
     }
 
@@ -56,12 +55,14 @@ public class CourseCase extends TestCaseBase {
     }
 
     @Test
-    public void testcase2(){
+    public void testcase2() throws InterruptedException {
         log.info("----------CourseCase----testcase2--------------");
+        Thread.sleep(5000);
         String title = "(毕设项目)前端后端一体化Vue+Go 企业级微服务网关项目";
         String currentTitle = handle.getTitle();
         log.info(currentTitle);
         boolean flag = currentTitle.contains(title);
+        Thread.sleep(5000);
         Assert.assertTrue(flag);
     }
 
