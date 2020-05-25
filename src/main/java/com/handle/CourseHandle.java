@@ -1,5 +1,7 @@
 package com.handle;
 
+import com.base.Base;
+import com.base.BaseHandle;
 import com.page.CoursePage;
 import com.page.LoginPage;
 import org.apache.log4j.Logger;
@@ -10,13 +12,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
  * coursehandle
  * Created by Administrator on 2020/5/17.
  */
-public class CourseHandle {
+public class CourseHandle extends BaseHandle {
 
-    WebDriver driver;
-    public CoursePage coursePage;
+    private WebDriver driver;
+    private CoursePage coursePage;
     private static Logger log = Logger.getLogger(CourseHandle.class);
 
     public CourseHandle(WebDriver driver){
+        super(driver);
         coursePage = new CoursePage(driver);
         this.driver = driver;
     }
@@ -42,7 +45,4 @@ public class CourseHandle {
         return courseNum;
     }
 
-    public void addCookie(){
-        coursePage.setcookie();
-    }
 }

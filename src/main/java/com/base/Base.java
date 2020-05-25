@@ -34,11 +34,4 @@ public class Base {
         Actions mouse = new Actions(driver);
         mouse.moveToElement(toElement).perform();
     }
-
-    public void setCookie(){
-        String value = "MzYTA5MDRkYThkZmI5MTA1YjlmNjEzNmVlYjUyZTUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAODk1MTcyMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGJjZTYxYjg4ODI2YWIwMmI1Y2I2Nzc5YTE2OGI3MmY0jzvDXo87w14%3DZD";
-        driver.manage().deleteAllCookies();
-        Cookie cookie = new Cookie("apsid",value,".imooc.com","/",null);
-        driver.manage().addCookie(cookie);
-    }
 }

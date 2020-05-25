@@ -1,5 +1,6 @@
 package com.handle;
 
+import com.base.BaseHandle;
 import com.page.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,9 +12,10 @@ import java.util.List;
  * 登录handle
  * Created by Administrator on 2020/5/17.
  */
-public class HomeHandle {
+public class HomeHandle extends BaseHandle {
     public HomePage homePage;
     public HomeHandle(WebDriver driver){
+        super(driver);
         homePage = new HomePage(driver);
     }
 

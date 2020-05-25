@@ -69,9 +69,9 @@ public class CourseCase extends TestCaseBase {
     @Test
     public void testcase3() throws InterruptedException {
         log.info("---------add cookie------------------");
+        handle.deleteCookie();
         Thread.sleep(1000);
-        handle.addCookie();
-        driver.navigate().refresh();
+        handle.setCookie();
         Thread.sleep(3000);
     }
 

@@ -30,8 +30,4 @@ public class CoursePage extends Base {
         WebElement ele = getElement(cartNum);
         return ele;
     }
-
-    public void setcookie(){
-        setCookie();
-    }
 }

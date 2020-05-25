@@ -1,5 +1,6 @@
 package com.handle;
 
+import com.base.BaseHandle;
 import com.page.LoginPage;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -8,16 +9,17 @@ import org.openqa.selenium.WebDriver;
  *
  * Created by Administrator on 2020/5/17.
  */
-public class LoginHandle {
+public class LoginHandle extends BaseHandle {
     public LoginPage loginPage;
     private static Logger log = Logger.getLogger(LoginHandle.class);
     public LoginHandle(WebDriver driver){
+        super(driver);
         loginPage = new LoginPage(driver);
     }
 
     public void clickHomeLoginBtn(){
         log.info("点击home页面的登录按钮");
-        loginPage.getHomeLoginBtn().click();
+        clickElement(loginPage.getHomeLoginBtn());
     }
 
     public void sendEmail(String email){
