@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite-login" verbose="2"  parallel="tests" thread-count="2" configfailurepolicy="continue"
+    time-out="300000" skipfailedinvocationcounts="true" preserve-order="true" >
+
+	<parameter name="brower" value="chrome"></parameter>
+	<test name="测试1" enabled="true" >
+		<parameter name="brower" value="firefox"></parameter>
+		<classes>
+			<class name="com.cases.CourseCase">
+				<methods>
+					<include name="testcase1"></include>
+					<include name="testcase2"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="测试2" enabled="true" >
+		<classes>
+			<class name="com.cases.LoginCase">
+				<methods>
+					<include name="testcase1"></include>
+					<include name="testcase2"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+</suite> 
