@@ -39,14 +39,16 @@ public class CourseCase extends TestCaseBase {
 //        driver.navigate().refresh();
     }
 
+    /**
+     * 购物车加入课程，断言是否加入
+     * @throws InterruptedException
+     */
     @Test
     public void testcase1() throws InterruptedException{
         log.info("-------CourseCase-------testcase1--------------");
         int beforeNum = handle.getCartNum();
         log.info("购物车中有数量before："+beforeNum);
-        Thread.sleep(1000);
         handle.clickAddCart();
-        Thread.sleep(1000);
         int afterNum = handle.getCartNum();
         log.info("购物车中有数量after："+afterNum);
         int result = afterNum - beforeNum;
@@ -54,6 +56,10 @@ public class CourseCase extends TestCaseBase {
         Assert.assertEquals(result, 1);
     }
 
+    /**
+     * 加入购物车，判断title是否正确
+     * @throws InterruptedException
+     */
     @Test
     public void testcase2() throws InterruptedException {
         log.info("----------CourseCase----testcase2--------------");
@@ -62,17 +68,18 @@ public class CourseCase extends TestCaseBase {
         String currentTitle = handle.getTitle();
         log.info(currentTitle);
         boolean flag = currentTitle.contains(title);
-        Thread.sleep(5000);
         Assert.assertTrue(flag);
     }
 
+    /**
+     * 查看塞值后，cookie是否生效
+     * @throws InterruptedException
+     */
     @Test
     public void testcase3() throws InterruptedException {
         log.info("---------add cookie------------------");
         handle.deleteCookie();
-        Thread.sleep(1000);
         handle.setCookie();
-        Thread.sleep(3000);
     }
 
     @AfterClass
