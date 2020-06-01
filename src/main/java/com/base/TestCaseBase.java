@@ -21,8 +21,8 @@ public class TestCaseBase{
 //        PropertyConfigurator.configure("log4j.properties");
         log.info("--------打开浏览器-------：" + brower + ";路径地址：" + System.getProperty("user.dir"));
         if("chrome".equals(brower)){
-            System.setProperty("webdriver.chrome.driver","drivers/chromedriver");
-////            System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
+//            System.setProperty("webdriver.chrome.driver","drivers/chromedriver");
+            System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
 //            ChromeOptions options = new ChromeOptions();
 //            options.addArguments("start-maximized");
 //            options.addArguments("–window-size=1024,1024");
