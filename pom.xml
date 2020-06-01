@@ -53,7 +53,7 @@
                         -Dfile.encoding=UTF-8
                     </argLine>
                     <suiteXmlFiles>
-                        <suiteXmlFile>${basedir}/src/main/resources/pc_testng.xml</suiteXmlFile>
+                        <suiteXmlFile>${basedir}/src/main/resources/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
