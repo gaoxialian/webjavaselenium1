@@ -30,6 +30,7 @@ public class HomeCase extends TestCaseBase {
     public void beforeClass(@Optional("chrome") String brower) {
         log.info("----beforeClass----");
         driver = getDriver(brower);
+        log.info("driver:"+driver);
         driver.get("https://www.imooc.com/course/list");
         driver.manage().window().maximize();
 //        handle = new LoginHandle(driver);
