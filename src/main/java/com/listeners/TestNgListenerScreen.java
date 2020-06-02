@@ -46,7 +46,11 @@ public class TestNgListenerScreen extends TestListenerAdapter {
         // 图片名称，图片路径
         File scrFile = ((RemoteWebDriver) driver).getScreenshotAs(OutputType.FILE);
         try {
-            Files.copy(scrFile, new File(filePath));
+            File file = new File(filePath);
+            if (!file.exists()) {
+                file.getParentFile().mkdirs();
+            }
+            Files.copy(scrFile, file);
         } catch (IOException e){
             e.printStackTrace();
         }
