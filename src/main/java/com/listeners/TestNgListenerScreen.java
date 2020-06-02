@@ -1,5 +1,6 @@
 package com.listeners;
 
+import com.base.TestCaseBase;
 import com.cases.LoginCase;
 import com.google.common.io.Files;
 import org.apache.log4j.Logger;
@@ -26,7 +27,7 @@ public class TestNgListenerScreen extends TestListenerAdapter {
     public void onTestFailure(ITestResult tr){
         log.info("-------onTestFailure-----");
 //        System.out.print(tr.getInstance());
-        LoginCase lt = (LoginCase)tr.getInstance();
+        TestCaseBase lt = (TestCaseBase)tr.getInstance();
         this.takeScreenShot(lt.driver);
         super.onTestFailure(tr);
     }
