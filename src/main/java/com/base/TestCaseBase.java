@@ -19,8 +19,8 @@ public class TestCaseBase{
 
     public WebDriver getDriver(String brower){
 //        PropertyConfigurator.configure("log4j.properties");
-        log.info("--------打开浏览器-------：" + brower + ";路径地址：" + System.getProperty("user.dir"));
         String sysPath = System.getProperty("user.dir");
+        log.info("--------打开浏览器-------：" + brower + ";路径地址：" + sysPath + "/drivers/chromedriver.exe");
         if("chrome".equals(brower)){
 //            System.setProperty("webdriver.chrome.driver","drivers/chromedriver");
             System.setProperty("webdriver.chrome.driver",sysPath + "/drivers/chromedriver.exe");
