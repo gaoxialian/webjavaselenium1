@@ -25,13 +25,14 @@ public class TestCaseBase{
         if("chrome".equals(brower)){
 //            System.setProperty("webdriver.chrome.driver","drivers/chromedriver");
             System.setProperty("webdriver.chrome.driver",path);
-            ChromeOptions options = new ChromeOptions();
-            options.setBinary(path);
+//            ChromeOptions options = new ChromeOptions();
+//            options.setBinary(path);
+
 //            options.addArguments("start-maximized");
 //            options.addArguments("–window-size=1024,1024");
 //            options.addArguments("–headless");
             log.info("222");
-            driver = new ChromeDriver(options);
+            driver = new ChromeDriver();
         } else if("ie".equals(brower)){
             System.setProperty("webdriver.ie.driver","drivers/IEDriverServer64.exe");
             driver = new InternetExplorerDriver();
