@@ -19,14 +19,16 @@ public class TestCaseBase{
 
     public WebDriver getDriver(String brower){
 //        PropertyConfigurator.configure("log4j.properties");
-        log.info("--------打开浏览器-------");
+        log.info("--------打开浏览器-------：" + brower + ";路径地址：" + System.getProperty("user.dir"));
         if("chrome".equals(brower)){
+//            System.setProperty("webdriver.chrome.driver","drivers/chromedriver");
             System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("start-maximized");
-            options.addArguments("–window-size=1024,1024");
-            options.addArguments("–headless");
-            driver = new ChromeDriver(options);
+//            ChromeOptions options = new ChromeOptions();
+//            options.addArguments("start-maximized");
+//            options.addArguments("–window-size=1024,1024");
+//            options.addArguments("–headless");
+            log.info("111");
+            driver = new ChromeDriver();
         } else if("ie".equals(brower)){
             System.setProperty("webdriver.ie.driver","drivers/IEDriverServer64.exe");
             driver = new InternetExplorerDriver();
