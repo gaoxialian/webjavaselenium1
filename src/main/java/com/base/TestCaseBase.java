@@ -20,10 +20,11 @@ public class TestCaseBase{
     public WebDriver getDriver(String brower){
 //        PropertyConfigurator.configure("log4j.properties");
         String sysPath = System.getProperty("user.dir");
-        log.info("--------打开浏览器-------：" + brower + ";路径地址：" + sysPath + "/drivers/chromedriver.exe");
+        String path = sysPath + "\\drivers\\chromedriver.exe";
+        log.info("--------打开浏览器-------：" + brower + ";路径地址："+path);
         if("chrome".equals(brower)){
 //            System.setProperty("webdriver.chrome.driver","drivers/chromedriver");
-            System.setProperty("webdriver.chrome.driver",sysPath + "\\drivers\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver",path);
 //            ChromeOptions options = new ChromeOptions();
 //            options.addArguments("start-maximized");
 //            options.addArguments("–window-size=1024,1024");
