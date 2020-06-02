@@ -27,7 +27,7 @@ public class TestCaseBase{
 //            options.addArguments("start-maximized");
 //            options.addArguments("–window-size=1024,1024");
 //            options.addArguments("–headless");
-            log.info("111");
+            log.info("222");
             driver = new ChromeDriver();
         } else if("ie".equals(brower)){
             System.setProperty("webdriver.ie.driver","drivers/IEDriverServer64.exe");
