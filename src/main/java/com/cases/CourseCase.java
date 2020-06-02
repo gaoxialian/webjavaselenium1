@@ -26,11 +26,14 @@ public class CourseCase extends TestCaseBase {
     @BeforeClass
     public void beforeClass(@Optional("firefox") String brower) throws InterruptedException {
         driver = getDriver(brower);
+        log.info("driver:"+driver);
         driver.get("https://coding.imooc.com/class/436.html");
-        Thread.sleep(3000);
+        log.info("222:");
         loginHandle = new LoginHandle(driver);
+        log.info("333:");
         handle = new CourseHandle(driver);
         loginHandle.login("15050193776","gao13773081116");
+        log.info("444:");
     }
 
     @BeforeMethod
