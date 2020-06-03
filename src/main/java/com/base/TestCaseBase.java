@@ -19,7 +19,7 @@ public class TestCaseBase{
 
     public WebDriver getDriver(String brower){
         String sysPath = System.getProperty("user.dir");
-        String path = sysPath + "\\src\\main\\resources\\drivers";
+        String path = sysPath + "\\drivers";
         log.info("--------打开浏览器-------：" + brower + ";路径地址："+path);
         if("chrome".equals(brower)){
             System.setProperty("webdriver.chrome.driver", path + "\\chromedriver.exe");
