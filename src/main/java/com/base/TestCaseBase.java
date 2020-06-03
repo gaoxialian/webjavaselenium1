@@ -19,11 +19,10 @@ public class TestCaseBase{
 
     public WebDriver getDriver(String brower){
         String sysPath = System.getProperty("user.dir");
-        String path = sysPath + "\\drivers";
-        log.info("--------打开浏览器-------：" + brower + ";路径地址："+path + "" +sysPath + "\\src\\main\\resources\\drivers\\chrome.exe");
+        String path = sysPath + "\\target\\classes\\drivers";
+        log.info("--------打开浏览器-------：" + brower + ";路径地址："+path + ";" +sysPath + "\\src\\main\\resources\\drivers\\chrome.exe");
         if("chrome".equals(brower)){
             System.setProperty("webdriver.chrome.driver", path + "\\chromedriver.exe");
-            System.setProperty("webdriver.chrome.bin",sysPath + "\\src\\main\\resources\\drivers\\chrome.exe");
             driver = new ChromeDriver();
         } else if("ie".equals(brower)){
             System.setProperty("webdriver.ie.driver","drivers/IEDriverServer64.exe");

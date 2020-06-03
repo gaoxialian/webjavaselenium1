@@ -20,9 +20,9 @@ public class LoginCase extends TestCaseBase {
     private LoginHandle handle;
     public WebDriver driver;
 
-    @Parameters({"brower"})
+        @Parameters({"brower"})
     @BeforeClass
-    public void beforeClass(@Optional("firefox") String brower){
+    public void beforeClass(@Optional("chrome") String brower){
         driver = getDriver(brower);
         driver.get("https://www.imooc.com/");
         handle = new LoginHandle(driver);
