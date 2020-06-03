@@ -3,10 +3,6 @@
 <suite name="Suite" verbose="2"  configfailurepolicy="continue" 
     time-out="300000" skipfailedinvocationcounts="true" preserve-order="true" > 
 	
-	<listeners>
-		<listener class-name="org.uncommons.reportng.HTMLReporter"/>
-         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
-	</listeners>
 	<suite-files>
 		<suite-file path="home_testng.xml"></suite-file>
 		<suite-file path="login_testng.xml"></suite-file>
