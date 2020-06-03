@@ -2,3 +2,4 @@
 logs/
 target/
 selenium_java_project.iml
+!*.exe
