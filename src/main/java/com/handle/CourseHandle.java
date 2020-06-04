@@ -27,10 +27,6 @@ public class CourseHandle extends BaseHandle {
         coursePage.getAddCart().click();
     }
 
-    public String getTitle(){
-        return driver.getTitle();
-    }
-
     /**
      * 获取购物车数量
      * @return
